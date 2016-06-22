@@ -19,9 +19,9 @@ var roleBuilder = {
             }
 	    }
 	    else {
-	        var sources = creep.room.find(FIND_SOURCES);
-            if(creep.harvest(sources[0]) == ERR_NOT_IN_RANGE) {
-                creep.moveTo(sources[0]);
+	        var spawn = creep.pos.findClosestByPath(FIND_MY_SPAWNS);
+            if(spawn.transferEnergy(creep, creep.energyCapacity) == ERR_NOT_IN_RANGE) {
+                creep.moveTo(spawn);
             }
 	    }
 	}
