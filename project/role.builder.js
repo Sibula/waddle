@@ -18,7 +18,7 @@ var roleBuilder = {
                 }
             }
 	    }
-	    else {
+	    else if(creep.pos.findClosestByPath(FIND_MY_SPAWNS) > 200){
 	        var spawn = creep.pos.findClosestByPath(FIND_MY_SPAWNS);
             if(spawn.transferEnergy(creep, creep.energyCapacity) == ERR_NOT_IN_RANGE) {
                 creep.moveTo(spawn);
